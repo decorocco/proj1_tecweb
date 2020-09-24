@@ -23,7 +23,7 @@ private Connection connection = null;
 		List<Jogos> jogos = new ArrayList<Jogos>();
 		
 		PreparedStatement stmt = connection.
-				prepareStatement("SELECT * FROM Jogos");
+				prepareStatement("SELECT * FROM Jogos ORDER BY data ASC");
 		ResultSet rs = stmt.executeQuery();
 		
 		while(rs.next()){
