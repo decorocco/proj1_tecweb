@@ -16,9 +16,10 @@
 
 		<tr>
 			<td><b>#</b><td>
-			<td><b>nome</b><td>
-			<td><b>lançamento</b><td>
-			<td><b>tamanho</b><td>
+			<td><b>Nome</b><td>
+			<td><b>Lançamento</b><td>
+			<td><b>Tamanho</b><td>
+			<td><b>Categoria</b><td>
 		</tr>
 		
 			<c:forEach var="jogo" items="${jogos}">
@@ -27,6 +28,7 @@
 				<td>${jogo.nome}<td>
 		 		<td><fmt:formatDate value="${jogo.data.time}" pattern="dd/MM/yyyy"/><td>
 				<td>${jogo.tamanho}<td>
+				<td>${jogo.categoria}<td>
 				
 				<form action="Remove" method="post">
 				<button type="submit" name="id" value="${jogo.id}">Apagar</button>
@@ -37,6 +39,7 @@
 				<input type="hidden" name="nome" value="${jogo.nome}">
 				<input type="hidden" name="data" value="<fmt:formatDate value="${jogo.data.time}" pattern="dd/MM/yyyy"/>">
 				<input type="hidden" name="tamanho" value="${jogo.tamanho}">
+				<input type="hidden" name="categoria" value="${jogo.categoria}">
 				<input type="submit" value="Atualizar">
 				
 				</form>
@@ -50,8 +53,9 @@
 
 			<form action='Cria' method='post'>
 				Nome: <input type='text' name='nome'><br>
-				Nascimento: <input type='text' name='data'><br>
+				Lançamento: <input type='text' name='data'><br>
 				Tamanho(GBs): <input type='text' name='tamanho'><br>
+				Categoria: <input type='text' name='categoria'><br>
 				<input type='submit' value='Submit'>
 			</form>
 

@@ -49,6 +49,7 @@ public class Atualiza extends HttpServlet {
 			jogo.setData(dataLancamento);
 			
 			jogo.setTamanho(Integer.valueOf(request.getParameter("tamanho")));
+			jogo.setCategoria(request.getParameter("categoria"));
 			
 			dao.altera(jogo);
 			

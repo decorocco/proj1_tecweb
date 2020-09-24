@@ -14,8 +14,9 @@
 
 	<form method='post' action="Atualiza">
 		Nome: <input value="${param.nome}" type='text' name='nome'><br>
-		Lançamento: <input value="${param.data}" type='text' name='nascimento'><br>
-		Tamanho: <input value="${param.tamanho}" type='text' name='idade'><br>
+		Lançamento: <input value="${param.data}" type='text' name='data'><br>
+		Tamanho: <input value="${param.tamanho}" type='text' name='tamanho'><br>
+		Categoria: <input value="${param.categoria}" type='text' name='categoria'><br>
 		
 		<input type="hidden" value="${param.id}" name="id">
 		<input type='submit' value='Atualizar'>

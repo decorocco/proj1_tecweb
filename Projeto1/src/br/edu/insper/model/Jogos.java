@@ -7,6 +7,7 @@ public class Jogos {
 	private String nome;
 	private Calendar data;
 	private Integer tamanho;
+	private String categoria;
 	
 	public Integer getId() {return id;}
 	public void setId(Integer id) {this.id = id;}
@@ -17,6 +18,9 @@ public class Jogos {
 	public Calendar getData() {return data;}
 	public void setData(Calendar data) {this.data = data;}
 	
-	public Integer getTamanho( ) {return tamanho;}
+	public Integer getTamanho() {return tamanho;}
 	public void setTamanho(Integer tamanho) {this.tamanho = tamanho;}
+	
+	public String getCategoria() {return categoria;}
+	public void setCategoria(String categoria) {this.categoria = categoria;}
 }

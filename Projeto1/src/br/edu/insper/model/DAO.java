@@ -36,6 +36,7 @@ private Connection connection = null;
 			jogo.setData(data);
 			
 			jogo.setTamanho(rs.getInt("tamanho"));
+			jogo.setCategoria(rs.getString("categoria"));
 			
 			jogos.add(jogo);
 		}
@@ -46,21 +47,23 @@ private Connection connection = null;
 	}
 	
 	public void adiciona(Jogos jogo) throws SQLException {
-		String sql = "INSERT INTO Jogos" + "(nome, data, tamanho) values(?,?,?)";
+		String sql = "INSERT INTO Jogos" + "(nome, data, tamanho, categoria) values(?,?,?,?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		stmt.setString(1, jogo.getNome());
 		stmt.setDate(2, new java.sql.Date(jogo.getData().getTimeInMillis()));
 		stmt.setDouble(3, jogo.getTamanho());
+		stmt.setString(4, jogo.getCategoria());
 		stmt.execute();
 		stmt.close();
 	}
 	
 	public void altera(Jogos jogo) throws SQLException {
-		String sql = "UPDATE Jogos SET " + "nome=?, data=?, tamanho=? WHERE id=?";
+		String sql = "UPDATE Jogos SET " + "nome=?, data=?, tamanho=?, categoria=? WHERE id=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		stmt.setString(1, jogo.getNome());
 		stmt.setDate(2, new java.sql.Date(jogo.getData().getTimeInMillis()));
-		stmt.setInt(4, jogo.getTamanho());
+		stmt.setInt(3, jogo.getTamanho());
+		stmt.setString(4, jogo.getCategoria());
 		stmt.setInt(5, jogo.getId());
 		stmt.execute();
 		stmt.close();
